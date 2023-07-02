@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/39726e49b6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: auto;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container form {
+        width: 35%;
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* border: 2px solid green; */
+        background-color: rgba(0, 128, 0, 0.045);
+        border-radius: 10px;
+        box-shadow: 0 0 10px green;
+      }
+      .container form label {
+        width: 90%;
+        margin-top: 5px;
+        font-weight: 900;
+      }
+      .container form input {
+        box-shadow: 0 0 10px green;
+        width: 90%;
+        height: 3%;
+        /* border: 2px solid black; */
+        margin-top: 5px;
+        border-radius: 5px;
+        padding-left: 10px;
+        outline: 0;
+        border: 0;
+      }
+      .container form button {
+        width: 84%;
+        height: 5%;
+        margin-top: 15px;
+        background-color: green;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        box-shadow: 0 0 10px green;
+        outline: 0;
+        border: 0;
+      }
+      .container form i {
+        margin-top: 5px;
+      }
+      .container form p {
+        padding-left: 10px;
+        display: none;
+      }
+      .success {
+        border: 3px solid green !important;
+      }
+      .failure {
+        border: 3px solid orange !important;
+      }
+      .failure + p {
+        display: block;
+        color: orange;
+      }
+      #captcha {
+        margin-top: 25px;
+        margin-bottom: 5px;
+        margin-left: 24rem;
+      }
+      #captcha_box {
+        width: 25%;
+        height: 3rem;
+        display: inline-block;
+        border: 2px solid black;
+        background: #fff;
+        font-size: 25px;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: green;
+        box-shadow: 0 0 10px green;
+        border: 0;
+      }
+      .reload_captcha {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/action_page.php" method="post">
+        <label for="">Name</label>
+        <input required type="text" name="name" />
+        <p>Name Should Only Contain Alphabets With Maximum 24 Charcters</p>
+
+        <label for="">Email</label>
+        <input required type="email" name="email" />
+        <p>Email Must be Like This- xyz@domedomain.com</p>
+
+        <label for="">Contact</label>
+        <input required type="text" name="contact" />
+        <p>contact number should have 10 digits</p>
+
+        <label for="">Paaword</label>
+        <input required type="password" name="password" />
+        <p>
+          password must have atleast 1 uppercase,1 lowercase,1 di9gits ,1
+          special charcters, with minimum 8 charcters and maximum 20 charcters
+        </p>
+
+        <label for="">Confirm Password</label>
+        <input required type="password" name="password" />
+        <p>password does not match</p>
+
+        <label id="captcha">Captcha</label>
+        <div id="captcha_box"></div>
+        <i class="fa-solid fa-rotate-right reload_captcha"></i>
+        <br /><br />
+
+        <input
+          type="text"
+          id="write_captcha"
+          name="captcha"
+          placeholder="enter captcha"
+        />
+        <button>submit</button>
+      </form>
+    </div>
+
+    <script src="form-validation.js"></script>
+  </body>
+</html>
